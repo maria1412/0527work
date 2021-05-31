@@ -29,6 +29,21 @@ input.onGesture(Gesture.TiltRight, function () {
         }
     }
 })
+input.onButtonPressed(Button.A, function () {
+    for (let index = 0; index < 4; index++) {
+        for (let a = 0; a <= 2; a++) {
+            led.plot(-1 + a, 2)
+            led.plot(0 + a, 2)
+            led.plot(4 - a, 2)
+            led.plot(5 - a, 2)
+            basic.pause(100)
+            led.unplot(-1 + a, 2)
+            led.unplot(0 + a, 2)
+            led.unplot(4 - a, 2)
+            led.unplot(5 - a, 2)
+        }
+    }
+})
 input.onGesture(Gesture.TiltLeft, function () {
     for (let index = 0; index < 4; index++) {
         for (let a = 0; a <= 2; a++) {
@@ -60,6 +75,19 @@ input.onGesture(Gesture.TiltLeft, function () {
         }
     }
 })
-basic.forever(function () {
+input.onButtonPressed(Button.B, function () {
 	
+})
+basic.forever(function () {
+    for (let a = 0; a <= 2; a++) {
+        led.plot(-1 + a, 2)
+        led.plot(0 + a, 2)
+        led.plot(4 - a, 2)
+        led.plot(5 - a, 2)
+        basic.pause(500)
+        led.unplot(-1 + a, 2)
+        led.unplot(0 + a, 2)
+        led.unplot(4 - a, 2)
+        led.unplot(5 - a, 2)
+    }
 })
